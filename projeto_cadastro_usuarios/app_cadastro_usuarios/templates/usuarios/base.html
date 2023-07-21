@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        header{
+            display: flex;
+            padding: 20px 50px;
+            background-color: antiquewhite;
+            border-bottom: 2px solid black;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .cadastro{
+            font-size: 20px; 
+            font-weight: bold;
+            padding: 25px;
+        }
+        .cadastro input{
+            border-radius: 15px;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .cadastro button{
+            cursor: pointer;
+            border-radius: 10px;
+            background-color:rgb(43, 222, 222);
+            text-align: center;
+        }
+        .cadastro button:hover{
+            background-color: rgb(76, 76, 134);
+            color: white;
+        }
+        .enviar{
+            display: flex;
+            justify-content: center;
+        }
+        #tabela td, #tabela th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+        #tabela tr:nth-child(even){background-color: #f2f2f2;}
+
+        #tabela tr:hover {background-color: #ddd;}
+
+        #tabela th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+        width:50px;
+        }
+        .usuarios{
+            display: flex;
+            justify-content: center;
+        }
+        .retorno{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <h1>Projeto Django</h1>
+    </header>
+        {%block conteudo%}
+
+        {%endblock%}
+</body>
+</html>
