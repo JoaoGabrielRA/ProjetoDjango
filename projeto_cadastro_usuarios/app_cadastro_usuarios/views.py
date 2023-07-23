@@ -18,8 +18,12 @@ def usuarios(request):
     }
 
     #retorna os dados para a listagem
-
     return redirect(home)
+
+def edit(request, id_usuario):
+    usuario =  Usuario.objects.get(id_usuario=id_usuario)
+
+    return render(request, "usuarios/update.html", {"usuario":usuario})
 
 def delete(request, id_usuario):
     usuario = Usuario.objects.get(id_usuario=id_usuario)
@@ -27,3 +31,12 @@ def delete(request, id_usuario):
     
     return redirect(home)
 
+def update(request, id_usuario):
+    new_name = request.POST.get("nome")
+    new_age = request.POST.get("idade")
+    usuario = Usuario.objects.get(id_usuario=id_usuario)
+    usuario.nome = new_name
+    usuario.idade = new_age
+    usuario.save()
+
+    return redirect(home)

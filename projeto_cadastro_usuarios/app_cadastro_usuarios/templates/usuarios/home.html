@@ -7,7 +7,7 @@
                 <h1>Cadastro de Usuários</h1>
                 <div> Nome: <input name="nome" ype="text"></div>
                 <div>Idade: <input name="idade"type="text"></div>
-                <div class="enviar"><button class="btn btn-sm">ENVIAR</button></div>
+                <div class="enviar"><button class="btn btn-primary btn-sm">ENVIAR</button></div>
             </div>
         </form>
     </div>
@@ -23,7 +23,8 @@
                 <td>{{usuario.id_usuario}}</td>
                 <td>{{usuario.nome}}</td>
                 <td>{{usuario.idade}}</td>
-                <td style="background-color: brown; cursor: pointer;"><a href="{% url 'delete' usuario.id_usuario %}">Excluir</a></td>
+                <td><a class="btn btn-primary"href="{% url 'edit' usuario.id_usuario %}">Editar</a></td>
+                <td><a class="btn btn-danger"href="{% url 'delete' usuario.id_usuario %}">Excluir</a></td>
             </tr>
             {%endfor%}
         </table>
