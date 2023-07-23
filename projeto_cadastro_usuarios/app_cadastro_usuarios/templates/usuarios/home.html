@@ -7,8 +7,25 @@
                 <h1>Cadastro de Usuários</h1>
                 <div> Nome: <input name="nome" ype="text"></div>
                 <div>Idade: <input name="idade"type="text"></div>
-                <div class="enviar"><button>ENVIAR</button></div>
+                <div class="enviar"><button class="btn btn-sm">ENVIAR</button></div>
             </div>
         </form>
+    </div>
+    <div class="usuarios">
+        <table id="tabela">
+            <tr>
+            <th>Id</th>  
+            <th>Nome</th>  
+            <th>Idade</th>  
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{usuario.id_usuario}}</td>
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.idade}}</td>
+                <td style="background-color: brown; cursor: pointer;"><a href="{% url 'delete' usuario.id_usuario %}">Excluir</a></td>
+            </tr>
+            {%endfor%}
+        </table>
     </div>
 {% endblock %}

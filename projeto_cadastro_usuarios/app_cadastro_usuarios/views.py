@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Usuario
 def home(request):
-    return render(request,'usuarios/home.html')
+    usuarios = {
+        'usuarios' : Usuario.objects.all()
+    }
+    return render(request,'usuarios/home.html', usuarios)
 
 def usuarios(request):
     #salva os dados do form no DB
@@ -16,4 +19,11 @@ def usuarios(request):
 
     #retorna os dados para a listagem
 
-    return render(request, 'usuarios/usuarios.html', usuarios)
+    return redirect(home)
+
+def delete(request, id_usuario):
+    usuario = Usuario.objects.get(id_usuario=id_usuario)
+    usuario.delete()
+    
+    return redirect(home)
+
